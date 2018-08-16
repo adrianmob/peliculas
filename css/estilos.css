@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    font-family: 'Mukta Mahee';
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-gap: 10px;
+    padding: 0 30px;
+    box-shadow: 0px 2px 16px 2px #bdbdbd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+}
+
+.imgBad {
+    width: 80px;
+}
+
+.titulo {
+    font-family: 'Monoton';
+}
+
+.imgUsu {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.header p {
+    display: inline-block;
+}
+
+.buscador {
+    display: flex;
+    align-items: center;
+}
+
+.buscador input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 45px;
+    border: 2px solid #8c8c8c;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 17px;
+}
+
+.buscador input:focus {
+    outline: none;
+    border: 2px solid #000000;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flecha {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.contenido {
+    margin-top: 100px;
+}
+
+.barLa {
+    background-color: rgb(212, 86, 86);
+    display: grid;
+    position: fixed;
+    width: 150px;
+    top: 80px;
+    bottom: 0;
+    grid-template-rows: 85% 15%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff3019+0,cf0404+100;Red+3D */
+    background: #ff3019;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ff3019 0%, #cf0404 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404', GradientType=0);
+    /* IE6-9 */
+}
+
+.barLa ul {
+    padding: 0;
+    margin: 0;
+}
+
+.barLa ul li a {
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.barLa ul li a,
+.barLa ul li span {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+}
+
+.barLa ul li {
+    list-style: none;
+}
+
+.barLa .menu1 {
+    margin-top: 60px;
+}
+
+.barLa .menu1 li {
+    margin-bottom: 40px;
+}
+
+.pelPri {
+    margin-left: 200px;
+    display: grid;
+    grid-template-rows: 35px 1fr 35px 1fr 35px 1fr;
+    grid-gap: 40px;
+}
+
+.pelPri h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.nuevas,
+.aclamadas,
+.noPerd {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: auto;
+    overflow-y: hidden;
+    grid-gap: 40px;
+}
+
+.item {
+    position: relative;
+}
+
+.item img {
+    width: 640px;
+    height: 392px;
+}
+
+.infoItem {
+    position: absolute;
+    bottom: -250px;
+    background-color: rgba(220, 16, 10, 0.6);
+    padding: 0 20px;
+    color: white;
+    text-align: justify;
+    transition: 0.8s;
+}
+
+.titPel {
+    margin: 0;
+    font-size: 25px;
+}
+
+.item:hover .infoItem {
+    bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "badge user" "buscador buscador";
+        height: 170px;
+        grid-gap: 0;
+    }
+    .badge {
+        grid-area: badge;
+    }
+    .usuario {
+        grid-area: user;
+    }
+    .buscador {
+        grid-area: buscador;
+    }
+    .barLa {
+        top: 93%;
+        width: 100%;
+        z-index: 2;
+        bottom: 0;
+        height: 77px;
+        display: inline-block;
+    }
+    .contenido {
+        margin-top: 190px;
+    }
+    .pelPri {
+        margin: 0 10px 70px 10px;
+    }
+    .menu1 {
+        margin: 0!important;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+    .barLa .menu1 li {
+        margin: 0!important;
+    }
+    .barLa .menu1 li a {
+        font-size: 25px;
+    }
+    .barLa .menu1 li span {
+        font-size: 15px;
+        margin-top: -10px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .imgUsu {
+        margin-left: 10px;
+    }
+    .barLa .menu1 li a {
+        font-size: 20px;
+    }
+    .barLa .menu1 li span {
+        font-size: 15px;
+    }
+    .pelPri h3 {
+        font-size: 25px;
+    }
+}
